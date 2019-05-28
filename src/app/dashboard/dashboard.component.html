@@ -1,0 +1,18 @@
+<h4>Dashboard</h4>
+<section>
+
+  <div class="card" *ngFor="let data of info">
+    <a class="card--image">
+        <img class="image" src="{{data.flag}}"/>
+    </a>
+    <div class="card--date">{{data.name}}</div>
+    <h2 class="card--heading">{{data.region}}</h2>
+    
+    <div class="card--snippet">
+      <p>Country Native-name:&nbsp;{{data.nativeName}}</p>
+      <p>Country subregion:&nbsp;{{data.subregion}}</p>
+    </div>
+    <a href="#" class="card--link">Read More >></a>
+  </div><!-- card -->
+  
+</section>

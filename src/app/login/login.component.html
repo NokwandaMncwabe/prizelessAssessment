@@ -1,0 +1,37 @@
+<div id="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">LOGIN</div>
+    <div class="panel-body">
+
+      <div *ngIf="invalidEmail"> 
+        <p style="color: red; text-align: center;"> Invalid Email, try signing up</p>
+      </div>
+      <div *ngIf="invalidPass"> 
+          <p style="color: red; text-align: center;"> Invalid Password</p>
+        </div>
+      <form id="login" role="form" #form="ngForm" (ngSubmit)="login(form.value)">
+        
+       
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+          <input id="username" type="text" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" name="email" value="" placeholder="Email">
+        </div>
+        
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="password" type="password" class="form-control" #password="ngModel" [(ngModel)]="user.password"  name="password" value="" placeholder="Password">   
+        </div>
+        <br>
+        <div class="text-center">
+          <div class="buttons">
+            <button type="submit" class="btn btn-primary pull-right">LOGIN</button>
+        <button type="submit" class="btn btn-primary pull-right" routerLink="/signup">SIGN UP</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+ 

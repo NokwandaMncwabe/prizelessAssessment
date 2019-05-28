@@ -1,0 +1,39 @@
+<div id="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">SIGN UP</div>
+
+
+    <div *ngIf="isName" class="error"> ALL FIELDS REQUIRED</div>
+
+    <div *ngIf="isEmail" class="error"> Incorrect email entered </div>
+    <div class="panel-body">
+      <form id="signin" #form="ngForm" role="form" (ngSubmit)="register(form.value)">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="username" type="text" class="form-control" name="name"  #name="ngModel" [(ngModel)]="user.name" placeholder="Name">
+          <div *ngIf="name.invalid && name.touched" >Name is required</div>
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+          <input id="username" type="text" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" name="email" value="" placeholder="Email">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+          <input id="username" type="text"  class="form-control" name="phone" #phone="ngModel" [(ngModel)]="user.phone" value="" placeholder="Phone">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="password" type="password" class="form-control" #password="ngModel" [(ngModel)]="user.password"  name="password" value="" placeholder="Password">   
+        </div>
+        <br>
+        <button  class="btn btn-primary pull-right" routerLink="/login">LOGIN</button>
+        <button type="submit" class="btn btn-primary pull-right" >SIGN UP</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+ 
